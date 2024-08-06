@@ -1,6 +1,6 @@
 # Web 2 - Midterm: Movie Web App
 
-**Goal:** Design and build a movie website app where it displays the trending movies and TV series of the day. The website should also include a search bar which the user can use to search.
+**Goal:** Design and build a movie website app where it displays the trending movies and TV series of the day. The website should also include a search bar that the user can use to search for a title.
 
 ## Instructions ✔️
 

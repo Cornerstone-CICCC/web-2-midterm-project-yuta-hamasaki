@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 app.get('/home', async (req, res) => {
   const options = {
     method: 'GET',
-    url: `https://api.themoviedb.org/3/trending/movie/week?api_key=${apiKey}&language=en-US&region=US&page=1`,
+    url: `https://api.themoviedb.org/3/trending/movie/day?api_key=${apiKey}&language=en-US&region=US&page=1`,
     headers: {
       accept: 'application/json',
       Authorization: `Bearer ${apiKey}`
@@ -37,7 +37,7 @@ app.get('/home', async (req, res) => {
 app.get('/tv', async (req, res) => {
   const options = {
     method: 'GET',
-    url: `https://api.themoviedb.org/3/trending/tv/week?api_key=${apiKey}&language=en-US&region=US&page=1`,
+    url: `https://api.themoviedb.org/3/trending/tv/day?api_key=${apiKey}&language=en-US&region=US&page=1`,
     headers: {
       accept: 'application/json',
       Authorization: `Bearer ${apiKey}`

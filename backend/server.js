@@ -5,7 +5,6 @@ const dotenv = require('dotenv')
 
 const app = express()
 const PORT = process.env.PORT || 3001
-const apiKey = process.env.API_KEY
 
 dotenv.config()
 
@@ -17,6 +16,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/home', async (req, res) => {
+  const apiKey = process.env.API_KEY
   const options = {
     method: 'GET',
     url: `https://api.themoviedb.org/3/trending/movie/day?api_key=${apiKey}&language=en-US&region=US&page=1`,
@@ -30,11 +30,12 @@ app.get('/home', async (req, res) => {
     const response = await axios.request(options)
     res.json(response.data);
   } catch (error) {
-    res.status(500).json({ error: error.message })
+    console.error({ error: error.message })
   }
 })
 
 app.get('/tv', async (req, res) => {
+  const apiKey = process.env.API_KEY
   const options = {
     method: 'GET',
     url: `https://api.themoviedb.org/3/trending/tv/day?api_key=${apiKey}&language=en-US&region=US&page=1`,
@@ -48,11 +49,12 @@ app.get('/tv', async (req, res) => {
     const response = await axios.request(options);
     res.json(response.data);
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    console.error({ error: error.message })
   }
 });
 
 app.get('/search', async (req, res) => {
+  const apiKey = process.env.API_KEY
   const query = req.query.q
   const options = {
     method: 'GET',
@@ -68,7 +70,7 @@ app.get('/search', async (req, res) => {
     const response = await axios.request(options)
     res.json(response.data);
   } catch (error) {
-    res.status(500).json({ error: error.message })
+    console.error({ error: error.message })
   }
 });
 

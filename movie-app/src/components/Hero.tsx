@@ -1,5 +1,5 @@
-
 import { useState } from 'react';
+import { CiSearch } from "react-icons/ci";
 
 interface HeroProps {
   onSearch: (query: string) => void;
@@ -19,8 +19,9 @@ const Hero: React.FC<HeroProps> = ({ onSearch }) => {
         alt="img"
         className="object-cover h-full w-full absolute top-0 left-0 z-0"
       />
-      <div className="relative flex justify-center top-[100px] w-full text-white z-10">
-        <h1 className="text-4xl font-bold">WELCOME</h1>
+      <div className="relative flex justify-center items-center top-[200px] w-full text-white z-10 flex-col">
+        <h2 className="text-6xl font-bold">YutaFlix</h2>
+        <p>Discover What's Trending</p>
       </div>
       <div className="relative flex justify-center items-center h-full w-full z-10">
         <div className="flex w-3/4 max-w-lg bg-white rounded-3xl shadow-lg">
@@ -28,16 +29,16 @@ const Hero: React.FC<HeroProps> = ({ onSearch }) => {
             className="w-full border-none bg-transparent px-4 py-1 text-gray-400 outline-none focus:outline-none"
             type="search"
             name="search"
-            placeholder="Search..."
+            placeholder="Search"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
           />
           <button
             type="button"
-            className="m-2 bg-black px-4 py-2 text-white rounded-3xl"
+            className="m-2 bg-black dark:bg-indigo-500 px-4 py-2 text-white rounded-3xl"
             onClick={handleSearch}
           >
-            Search
+            <CiSearch/>
           </button>
         </div>
       </div>

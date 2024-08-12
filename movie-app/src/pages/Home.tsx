@@ -19,7 +19,7 @@ function Home() {
         setMovies(response.data.results);
         setLoading(false);
       } catch (error) {
-        setError('Failed to fetch movies');
+        setError('moviesを取得できませんでした');
         setLoading(false);
       }
     };
@@ -34,7 +34,7 @@ function Home() {
         setTvs(response.data.results);
         setLoading(false);
       } catch (error) {
-        setError('Failed to fetch TV series');
+        setError('TV seriesを取得できませんでした');
         setLoading(false);
       }
     };
@@ -53,7 +53,7 @@ function Home() {
       setSearchResults(response.data.results || []);
       setLoading(false);
     } catch (error) {
-      setError('Failed to fetch search results');
+      setError('search resultsを取得できませんでした');
       console.error(error)
       setLoading(false);
     }
